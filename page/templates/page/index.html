@@ -1,0 +1,93 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+{{page_title}}
+{% endblock %}
+
+{% block container-fluid %}
+
+<!-- Carousel -->
+{% include 'page/components/carousel.html' %}
+<!-- Carousel ENd -->
+
+
+<div class="container-fluid mt-2 mb-5">
+    
+    <!-- Hero Content -->
+    {% include 'page/components/hero_component.html' %}
+    <!-- Hero Content ENd -->
+    
+    <!-- About Us Start -->
+    <div class="row">
+        <div class="col-sm-6 ms-0 ps-0">
+            <img src="https://picsum.photos/id/85/600/250" alt="" class="w-100">
+        </div>
+        <div class="col-sm-6 d-fle justify-content-center align-items-center">
+            <div class="text-center">
+                <h1 class="display-2">Hakkimizda</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, impedit!</p>
+                <p>Voluptas cum architecto enim consequatur et velit molestias, deserunt labore.</p>
+                <p>Repudiandae autem voluptates sunt corrupti reiciendis, dignissimos alias molestiae dicta.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Abaout Us End -->
+</div>
+{% endblock %}
+
+{% block container %}
+
+    <!-- Products Start -->
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>URUNLERIMIZ</h1>
+            <hr>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <div class="card">
+                <img src="https://picsum.photos/id/81/400/250" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Urun 1</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+                        veniam
+                        molestiae praesentium rem? Molestias voluptate sapiente provident. Alias ipsam molestiae
+                        illum
+                        assumenda itaque expedita soluta nostrum excepturi earum? Nisi, explicabo.</p>
+                    <a href="#" class="btn btn-primary">Incele</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <div class="card">
+                <img src="https://picsum.photos/id/1/400/250" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Urun 2</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+                        veniam
+                        molestiae praesentium rem? Molestias voluptate sapiente provident. Alias ipsam molestiae
+                        illum
+                        assumenda itaque expedita soluta nostrum excepturi earum? Nisi, explicabo.</p>
+                    <a href="#" class="btn btn-primary">Incele</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <div class="card">
+                <img src="https://picsum.photos/id/31/400/250" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Urun 3</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+                        veniam
+                        molestiae praesentium rem? Molestias voluptate sapiente provident. Alias ipsam molestiae
+                        illum
+                        assumenda itaque expedita soluta nostrum excepturi earum? Nisi, explicabo.</p>
+                    <a href="#" class="btn btn-primary">Incele</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products End -->
+
+
+
+{% endblock %}

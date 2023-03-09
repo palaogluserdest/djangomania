@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+{{page_title}}
+{% endblock %}
+
+{% block container-fluid %}
+<div class="container-fluid mt-2 mb-5">
+    <div class="row">
+        <div class="col-sm-12 px-0">
+            <img src="https://picsum.photos/id/42/1200/450" alt="" class="w-100">
+        </div>
+    </div>
+    
+    <!-- Hero Content -->
+    {% include 'page/components/hero_component.html' %}
+    <!-- Hero Content ENd -->
+    
+</div>
+{% endblock %}
+
+{% block container %}
+{{ detail | safe}}
+{% endblock %}

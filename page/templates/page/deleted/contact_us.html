@@ -1,0 +1,69 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+{{page_title}}
+{% endblock %}
+
+{% block container-fluid %}
+<div class="container-fluid mt-2 mb-5">
+    <!-- One Shot Picture Start -->
+    <div class="row">
+        <div class="col-sm-12 px-0">
+            <img src="https://picsum.photos/id/44/1200/450" alt="" class="w-100">
+        </div>
+    </div>
+    <!-- One Shot Picture End -->
+
+    <!-- Hero Content -->
+    {% include 'page/components/hero_component.html' with hero_title='İletişim' %}
+    <!-- Hero Content ENd -->
+    
+</div>
+{% endblock %}
+
+
+{% block container %}
+<div class="row mb-5">
+    <div class="col-sm-8 offset-sm-2">
+        <address>
+            <h2>Adresimiz</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque, deserunt voluptates animi,
+                ad unde deleniti alias, numquam sit dolore tempore nulla est illum ipsa ullam. Modi inventore id
+                corrupti.
+            </p>
+            <hr>
+            <h2>Bize Ulasin</h2>
+            <form class="row g-3">
+                <div class="col-12">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-12">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">Aciklama yaz...</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="inputCity" class="form-label">Sehir</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-12">
+                    <label for="inputState" class="form-label">Bize Nasil Ulastin</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Seciminiz...</option>
+                        <option>Sosyal Medya</option>
+                        <option>Google</option>
+                        <option>Reklam</option>
+                        <option>Referans</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Gonder</button>
+                </div>
+            </form>
+        </address>
+    </div>
+</div>
+
+{% endblock %}
