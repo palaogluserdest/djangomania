@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Todo, Category, Tag
+from .models import Todo, TodoCategory, TodoTag
 
 
 class TodoAdmin(admin.ModelAdmin):
@@ -21,7 +21,7 @@ class TodoAdmin(admin.ModelAdmin):
 
 
 
-class CategoryAdmin(admin.ModelAdmin):
+class TodoCategoryAdmin(admin.ModelAdmin):
     list_display=[
         'pk',
         'title',
@@ -33,7 +33,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'title',
     ]
 
-class TagAdmin(admin.ModelAdmin):
+class TodoTagAdmin(admin.ModelAdmin):
     list_display=[
         'pk',
         'title',
@@ -47,5 +47,5 @@ class TagAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Todo, TodoAdmin,)
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Tag, TagAdmin)
+admin.site.register(TodoCategory, TodoCategoryAdmin)
+admin.site.register(TodoTag, TodoTagAdmin)

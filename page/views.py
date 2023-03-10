@@ -29,44 +29,6 @@ def home_view(request):
     return render(request, "page/index.html", context)
 
 
-def about_us_view(request):
-    page_title = "Hakkimizda"
-    hero_title = "Hakkimizda"
-    hero_content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula velit vitae porttitor mollis. Maecenas in purus in leo accumsan viverra non non quam. Curabitur commodo egestas enim, et blandit."
-    context = dict(
-        page_title=page_title,
-        hero_title = hero_title,
-        hero_content = hero_content,
-        FAKE_DB_PROJECTS = FAKE_DB_PROJECTS,
-    )
-    return render(request, "page/about_us.html", context)
-
-
-def contact_us_view(request):
-    page_title = "Iletisim"
-    hero_title = "Iletisim"
-    hero_content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula velit vitae porttitor mollis. Maecenas in purus in leo accumsan viverra non non quam. Curabitur commodo egestas enim, et blandit."
-    context = dict(
-        page_title=page_title,
-        hero_title = hero_title,
-        hero_content = hero_content,
-        FAKE_DB_PROJECTS = FAKE_DB_PROJECTS,
-    )
-    return render(request, "page/contact_us.html", context)
-
-
-def vision_us_view(request):
-    page_title = "Vizyonumuz"
-    hero_title = "Vizyonumuz"
-    hero_content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula velit vitae porttitor mollis. Maecenas in purus in leo accumsan viverra non non quam. Curabitur commodo egestas enim, et blandit."
-    context = dict(
-        page_title=page_title,
-        hero_title = hero_title,
-        hero_content = hero_content,
-        FAKE_DB_PROJECTS = FAKE_DB_PROJECTS,
-    )
-    return render(request, "page/vision_us.html", context)
-
 
 def page_view (request, slug):
     result = list(filter(lambda x: (x['url'] == slug), FAKE_DB_PAGES))
