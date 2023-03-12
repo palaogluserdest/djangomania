@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 MY_APPS = [
     # 'blog',
-    # 'page',
+    'pages',
     'todo',
 ]
 BASE_APPS =[
@@ -126,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STAtICFILES_DIRS = [
+STATICFILES_DIRS = [
     BASE_DIR / 'static_files'
 ]
 

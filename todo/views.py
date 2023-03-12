@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 # Bu şekilde de yazılabilirdi " from todo.models import Todo "
-from .models import Todo, Category, Tag
+from .models import Todo, TodoCategory, TodoTag
 from django.http import Http404
 
 # @login_required(login_url='/admin/login/')  # Bu yapısayesinde login görülmemesi durumunda zorunlu oarak girişe yönlendirir.

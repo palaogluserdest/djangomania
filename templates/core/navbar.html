@@ -21,9 +21,11 @@
               <li><a class="dropdown-item" href="{{  category.get_absolute_url }}">{{ category.title }}</a></li>
               {% endfor %}
             </ul>
+            {% if request.user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="{% url 'logout_view' %}">Oturumu Kapat</a>
             </li>
+            {% endif %}
         </ul>
       </div>
     </div>

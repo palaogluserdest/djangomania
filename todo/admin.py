@@ -45,7 +45,8 @@ class TodoTagAdmin(admin.ModelAdmin):
     ]
 
 
-
+# Önce models yapısı sonra reğister edilecek yapı gönderilir. 'Todo: Models'den gelen class yapısı; 
+# TodoAdmin burada register edilirken gelmesi gerek kısımları
 admin.site.register(Todo, TodoAdmin,)
 admin.site.register(TodoCategory, TodoCategoryAdmin)
 admin.site.register(TodoTag, TodoTagAdmin)
