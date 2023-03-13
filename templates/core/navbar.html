@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="/">TODO-APP</a>
+      <a class="navbar-brand" href="/">DjangoMania</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -14,7 +14,7 @@
               Kategoriler
             </a>
             <ul class="dropdown-menu">
-              {% for category in global_categories %}
+              {% for category in global_todo_categories %}
               {% comment "get_absolute_url yapısı kullanılmadan önceki uzun versiyonu" %}
               <li><a class="dropdown-item" href="{% url 'category_detail' category_slug=category.slug %}">{{ category.title }}</a></li>
               {% endcomment %}

@@ -4,24 +4,24 @@ from django.shortcuts import render, get_object_or_404
 from .models import Todo, TodoCategory, TodoTag
 from django.http import Http404
 
-# @login_required(login_url='/admin/login/')  # Bu yapısayesinde login görülmemesi durumunda zorunlu oarak girişe yönlendirir.
-# def home_view(request):
-#     # todos = Todo.objects.filter(is_active = True)
+@login_required(login_url='/admin/login/')  # Bu yapısayesinde login görülmemesi durumunda zorunlu oarak girişe yönlendirir.
+def all_todos_view(request):
+    # todos = Todo.objects.filter(is_active = True)
 
-#     #  Bu arama şeklinde title sütununda todo içerenleri getir dedik.
-#     # todos = todos.filter(title__icontains="todo")
+    #  Bu arama şeklinde title sütununda todo içerenleri getir dedik.
+    # todos = todos.filter(title__icontains="todo")
 
-#     # Bu şekilde de tek tapıda istedğimiz kadar sorgulama yapabiliriz. Sıraya dikkat edilerek yapılması daha iyi sonuçlar vercektir.
-#     todos = Todo.objects.filter(
-#         user=request.user,
-#         is_active=True,
-#         # title__icontains="todo",
-#     )
+    # Bu şekilde de tek tapıda istedğimiz kadar sorgulama yapabiliriz. Sıraya dikkat edilerek yapılması daha iyi sonuçlar vercektir.
+    todos = Todo.objects.filter(
+        user=request.user,
+        is_active=True,
+        # title__icontains="todo",
+    )
 
-#     context = dict(
-#         todos=todos,
-#     )
-#     return render(request, 'todo/todo_list.html', context)
+    context = dict(
+        todos=todos,
+    )
+    return render(request, 'todo/todo_list.html', context)
 
 
 # def todo_detail_view(request, id):

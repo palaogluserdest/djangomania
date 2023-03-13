@@ -14,12 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from pages.views import home_view
 from config.views import logout_view
 
 urlpatterns = [
     path('', home_view, name='home'),
+    
+    # Todo app'nin urls yapısı eklendi.
+    path('todo/', include('todo.urls')),
+    
     # Auth:
     path('account/logout', logout_view, name="logout_view"),
     # Admin:
