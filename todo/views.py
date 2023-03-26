@@ -64,6 +64,6 @@ def tag_detail_view(request, tag_slug):
     tag = get_object_or_404(TodoTag, slug=tag_slug)
     context=dict(
         tag=tag,
-        todos=tag.todo_set.filter(user=request.user)
+        todos_category=tag.todo_set.filter(user=request.user)
     )
     return render(request, 'todo/todo_list.html', context)

@@ -14,14 +14,14 @@ class TodoCategory(models.Model):
     def __str__(self):
         return self.title
 
-    # def get_absolute_url(self):
-    #     return reverse(
-    #         # Buradaki adlandırma path kısmında verilen name bilgisdir.
-    #         'category_detail',
-    #         kwargs={
-    #             "category_slug": self.slug
-    #         }
-    #     )
+    def get_absolute_url(self):
+        return reverse(
+            # Buradaki adlandırma path kısmında verilen name bilgisdir.
+            'todo:category_view',
+            kwargs={
+                "category_slug": self.slug
+            }
+        )
 
 
 class TodoTag(models.Model):
@@ -34,13 +34,13 @@ class TodoTag(models.Model):
     def __str__(self):
         return self.title
 
-    # def get_absolute_url(self):
-    #     return reverse(
-    #         'tag_detail_view',
-    #         kwargs={
-    #             "tag_slug": self.slug
-    #         }
-    #     )
+    def get_absolute_url(self):
+        return reverse(
+            'todo:tag_view',
+            kwargs={
+                "tag_slug": self.slug
+            }
+        )
 
 
 class Todo(models.Model):
@@ -58,11 +58,11 @@ class Todo(models.Model):
     def __str__(self):
         return self.title
 
-    # def get_absolute_url(self):
-    #     return reverse(
-    #             'todo_detail',
-    #         kwargs={
-    #             "id": self.pk,
-    #                 "category_slug": self.category.slug,
-    #         }
-    #     )
+    def get_absolute_url(self):
+        return reverse(
+                'todo:todo_detail_view',
+            kwargs={
+                "id": self.pk,
+                    "category_slug": self.category.slug,
+            }
+        )

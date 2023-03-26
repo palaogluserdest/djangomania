@@ -9,9 +9,9 @@
             {% elif tag %}
             <h2>Taglar: {{ tag }}</h2>
             {% endif %}
-            <h1 class="text-primary">TODO_LİST(_{{ todos.count }}_)</h1>
+            <h1 class="text-primary">TODO_LİST(_{{ todos_category.count }}_)</h1>
             <div class="list-group">
-                {% for todo in todos %}
+                {% for todo in todos_category %}
                 <a href="{{ todo.get_absolute_url }}" class="list-group-item list-group-item-action" aria-current="true">
                     {{ todo.title }}
                 </a>
