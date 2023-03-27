@@ -16,11 +16,10 @@ class Page(models.Model):
     def __str__(self):
         return self.title
 
-    # def get_absolute_url(self):
-    #     return reverse(
-    #             'todo:todo_detail_view',
-    #         kwargs={
-    #             "id": self.pk,
-    #                 "category_slug": self.category.slug,
-    #         }
-    #     )
+    def get_absolute_url(self):
+        return reverse(
+                'page:page_view',
+            kwargs={
+                "page_slug": self.slug,
+            }
+        )

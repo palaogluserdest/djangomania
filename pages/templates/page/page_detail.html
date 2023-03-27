@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-{{page_title}}
+{{page.title}}
 {% endblock %}
 
 {% block container-fluid %}
@@ -9,13 +9,13 @@
     <!-- One Shot Picture Start -->
     <div class="row">
         <div class="col-sm-12 px-0">
-            <img src="https://picsum.photos/id/44/1200/450" alt="" class="w-100">
+            <img src="{{ page.cover_image.url }}" alt="" class="w-100">
         </div>
     </div>
     <!-- One Shot Picture End -->
 
     <!-- Hero Content -->
-    {% include 'page/components/hero_component.html' with hero_title=page_title %}
+    {% include 'page/components/hero_component.html' with hero_title=page.title %}
     <!-- Hero Content ENd -->
     
 </div>
@@ -23,5 +23,5 @@
 
 
 {% block container %}
-{{ detail | safe }}
+{{ page.content }}
 {% endblock %}

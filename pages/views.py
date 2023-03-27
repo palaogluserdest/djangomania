@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from random import randint
 from .fake_db.pages import FAKE_DB_PAGES
+from pages.models import Page
+
 
 FAKE_DB_PROJECTS = [
     f"https://picsum.photos/id/{id}/100/60" for id in range(21, 29)
@@ -30,15 +32,11 @@ def home_view(request):
 
 
 
-def page_view (request, slug):
-    result = list(filter(lambda x: (x['url'] == slug), FAKE_DB_PAGES))
-    context = dict(
-        page_title=result[0]['title'],
-        detail=result[0]['detail'],
-        FAKE_DB_PROJECTS=FAKE_DB_PROJECTS,
+def page_view (request, page_slug):
+    page=get_object_or_404(Page, slug=page_slug)
+    context=dict(
+        page=page,
     )
-    if result:
-        return render(request, "page/page_detail.html", context)
-    raise Http404("Poll does not exist!")
+    return render(request, "page/page_detail.html", context)
     
     

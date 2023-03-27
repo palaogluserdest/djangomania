@@ -1,32 +1,40 @@
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/">DjangoMania</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+  <div class="container">
+    <a class="navbar-brand" href="/">DjangoMania</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Ana Sayfa</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            TODO Kategoriler
+          </a>
+          <ul class="dropdown-menu">
+            {% for category in global_todo_categories %}
+            {% comment "get_absolute_url yapısı kullanılmadan önceki uzun versiyonu" %}
+            <li><a class="dropdown-item" href="{% url 'category_detail' category_slug=category.slug %}">{{
+                category.title }}</a></li>
+            {% endcomment %}
+            <li><a class="dropdown-item" href="{{  category.get_absolute_url }}">{{ category.title }}</a></li>
+            {% endfor %}
+          </ul>
+          {% for page in global_pages %}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Ana Sayfa</a>
+            <a class="nav-link" aria-current="page" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              TODO Kategoriler
-            </a>
-            <ul class="dropdown-menu">
-              {% for category in global_todo_categories %}
-              {% comment "get_absolute_url yapısı kullanılmadan önceki uzun versiyonu" %}
-              <li><a class="dropdown-item" href="{% url 'category_detail' category_slug=category.slug %}">{{ category.title }}</a></li>
-              {% endcomment %}
-              <li><a class="dropdown-item" href="{{  category.get_absolute_url }}">{{ category.title }}</a></li>
-              {% endfor %}
-            </ul>
-            {% if request.user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{% url 'logout_view' %}">Oturumu Kapat</a>
-            </li>
-            {% endif %}
-        </ul>
-      </div>
+          {% endfor %}
+
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'logout_view' %}">Oturumu Kapat</a>
+        </li>
+        {% endif %}
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

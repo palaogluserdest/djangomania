@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import include, path
 from pages.views import home_view
 from config.views import logout_view
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -24,8 +26,11 @@ urlpatterns = [
     # Todo app'nin urls yapısı eklendi.
     path('todo/', include('todo.urls', namespace='todo')),
     
+     # Page app'nin urls yapısı eklendi.
+    path('page/', include('pages.urls', namespace='page')),
+    
     # Auth:
     path('account/logout', logout_view, name="logout_view"),
     # Admin:
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
