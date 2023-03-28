@@ -3,13 +3,16 @@ from pages.models import Page
 
 class PageAdmin(admin.ModelAdmin):
     list_display = [
-        'user',
-        'slug',
         'title',
+        'slug',
         'content',
+        'user',
         'is_active',
         'created_at',
         'updated_at',
+    ]
+    list_display_links=[
+        'title',
     ]
 
 

@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-glcyzvsl#lvn0=@u%b+6y(hco4nq2uxw-+kum!e399xonf^f$d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.1.58',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -42,7 +45,9 @@ BASE_APPS =[
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-THIRD_PARTY_APPS= [] 
+THIRD_PARTY_APPS= [
+    'tinymce',
+] 
 
 INSTALLED_APPS = MY_APPS + BASE_APPS + THIRD_PARTY_APPS
 

@@ -33,4 +33,8 @@ urlpatterns = [
     path('account/logout', logout_view, name="logout_view"),
     # Admin:
     path('admin/', admin.site.urls),
+
+    #Tinymce için path
+    path('tinymce/', include('tinymce.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

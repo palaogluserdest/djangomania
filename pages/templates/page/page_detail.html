@@ -23,5 +23,10 @@
 
 
 {% block container %}
-{{ page.content }}
+<div class="row">
+    <div class="col-sm-6 offset-sm-3">
+        {{ page.content | safe }}
+    </div>
+</div>
 {% endblock %}
+
