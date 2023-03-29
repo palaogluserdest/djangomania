@@ -26,14 +26,13 @@ SECRET_KEY = 'django-insecure-glcyzvsl#lvn0=@u%b+6y(hco4nq2uxw-+kum!e399xonf^f$d
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '192.168.1.58',
     '127.0.0.1',
 ]
 
 
 # Application definition
 MY_APPS = [
-    # 'blog',
+    'blog',
     'pages',
     'todo',
 ]
