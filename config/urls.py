@@ -23,6 +23,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', home_view, name='home'),
     
+    # Blog App'in urls yapısı eklendi.
+    path('blog/', include('blog.urls', namespace='blog')),
+
     # Todo app'nin urls yapısı eklendi.
     path('todo/', include('todo.urls', namespace='todo')),
     

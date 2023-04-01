@@ -4,13 +4,12 @@ from blog.models import Post, BlogCategory, BlogTag
 class PostAdmin(admin.ModelAdmin):
     list_display=[
         'pk',
-        'title',
-        'content',
-        'category',
         'user',
+        'title',
+        'slug',
+        'count',
+        'category',
         'is_active',
-        'created_at',
-        'updated_at',
     ]
     list_display_links=[
         'title',
@@ -19,6 +18,8 @@ class PostAdmin(admin.ModelAdmin):
 class BlogCategoryAdmin(admin.ModelAdmin):
     pass
 
+class BlogTagAdmin(admin.ModelAdmin):
+    pass
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(BlogCategory)
